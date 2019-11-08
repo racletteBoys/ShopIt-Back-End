@@ -4,7 +4,7 @@ import Bars from './bars.jsx';
 import ProductBreakdown from './productbreakdown.jsx';
 
 export default class Ratings extends React.Component {
-  
+
     render() {
         var graph = [];
         if (this.props.ratingInfo !== null) {

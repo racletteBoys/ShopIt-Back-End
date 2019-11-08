@@ -17,10 +17,11 @@ export default class ReviewsAndRatings extends React.Component {
             var obj = this;
             $.ajax({
                 type: 'GET',
-                url: `http://52.26.193.201:3000/reviews/${productId}/list`,
+                url: `http://localhost:3001/reviews/${productId}/list`,
                 success: function (data) {
+                    let parsed = JSON.parse(data);
                     obj.setState({
-                        reviewInfo: data
+                        reviewInfo: parsed
                     });
                 }
             });
@@ -31,17 +32,18 @@ export default class ReviewsAndRatings extends React.Component {
             var obj = this;
             $.ajax({
                 type: 'GET',
-                url: `http://52.26.193.201:3001/reviews/${productId}/meta`,
+                url: `http://localhost:3001/reviews/${productId}/meta`,
                 success: function (data) {
+                    let parsed = JSON.parse(data);
                     obj.setState({
-                        ratingInfo: data
+                        ratingInfo: parsed
                     });
                 }
             });
         }
     }
-
     render() {
+        console.log(this.state.reviewInfo)
         if (this.state.reviewInfo === null || this.state.reviewInfo.product != this.props.productid) {
             this.fetchReviews(this.props.productid);
             this.fetchRatings(this.props.productid);
