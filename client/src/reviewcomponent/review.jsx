@@ -23,7 +23,7 @@ export default class Review extends React.Component {
     incrementHelpful() {
         var obj = this;
         $.ajax({
-            url: "http://52.26.193.201:3000/reviews/helpful/" + `${obj.props.review.review_id}`,
+            url: "http://localhost:3001/reviews/helpful/" + `${obj.props.review.review_id}`,
             type: "PUT",
             success: function (res) {
                 console.log("Helpful!");
@@ -34,7 +34,7 @@ export default class Review extends React.Component {
     reportReview() {
         var obj = this;
         $.ajax({
-            url: "http://52.26.193.201:3000/reviews/report/" + `${obj.props.review.review_id}`,
+            url: "http://localhost:3001/reviews/report/" + `${obj.props.review.review_id}`,
             type: "PUT",
             success: function (res) {
             }

@@ -29,7 +29,7 @@ export default class ModalReview extends React.Component {
         };
         console.log(JSON.stringify(options));
 
-        fetch(`http://52.26.193.201:3000/reviews/${this.props.productid}`, {
+        fetch(`http://localhost:3001/reviews/${this.props.productid}`, {
             method: 'post',
             headers: {
                 'Content-type': 'application/json'
@@ -67,7 +67,7 @@ export default class ModalReview extends React.Component {
                         Characteristics:
                         <input type="text" name="characteristics" defaultValue="Write more.." />
 						<input type="submit" value="Submit" />
-					</form> 
+					</form>
 				</div>
 			</div>
 		)

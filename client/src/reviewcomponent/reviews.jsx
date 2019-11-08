@@ -71,7 +71,7 @@ export default class Reviews extends React.Component {
         if (this.props.productinfo !== null) {
             var obj = this;
             $.ajax({
-                url: `http://52.26.193.201:3000/reviews/${this.props.productinfo.product}/list?sort=${sortOptions}`,
+                url: `http://localhost:3001/reviews/${this.props.productinfo.product}/list?sort=${sortOptions}`,
                 type: "GET",
                 dataType: "json",
                 success: function (res) {
