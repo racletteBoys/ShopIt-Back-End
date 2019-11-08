@@ -31,7 +31,7 @@ export default class ReviewsAndRatings extends React.Component {
             var obj = this;
             $.ajax({
                 type: 'GET',
-                url: `http://52.26.193.201:3000/reviews/${productId}/meta`,
+                url: `http://52.26.193.201:3001/reviews/${productId}/meta`,
                 success: function (data) {
                     obj.setState({
                         ratingInfo: data
